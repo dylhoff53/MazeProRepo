@@ -2,8 +2,10 @@
  
 Build: https://dylhoff53.github.io/MazeProRepo/
 
-Press G to generate a maze
-
 Press E to conncect another maze to the previous one
 
-Press G again to reset the whole process
+Press R to do it again, 
+
+Press T to go it again,
+
+Alternate betweeen R and T to do it forever
