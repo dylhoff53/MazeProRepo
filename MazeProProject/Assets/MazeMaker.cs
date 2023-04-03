@@ -15,13 +15,18 @@ public class MazeMaker : MonoBehaviour
     //GridLevel levelOne;
     GridLevelWithRooms levelOne;
     GameObject wallPrefab;
+    GameObject wall1Prefab;
+    GameObject wall2Prefab;
     GameObject blockerPrefab;
     public Manager mang;
+    public int MazeCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         wallPrefab = Resources.Load<GameObject>("Wall");
+        wall1Prefab = Resources.Load<GameObject>("Wall 1");
+        wall2Prefab = Resources.Load<GameObject>("Wall 2");
         blockerPrefab = Resources.Load<GameObject>("Blocker");
         if (first == true)
         {
@@ -67,6 +72,20 @@ public class MazeMaker : MonoBehaviour
             {
                 Destroy(wall);
             }
+        } else if (MazeCounter == 2)
+        {
+            GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall1");
+            foreach (GameObject wall in walls)
+            {
+                Destroy(wall);
+            }
+        } else if(MazeCounter == 3)
+        {
+            GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall2");
+            foreach (GameObject wall in walls)
+            {
+                Destroy(wall);
+            }
         }
 
         // generate a new maze
@@ -101,26 +120,29 @@ public class MazeMaker : MonoBehaviour
                 exit.y = mazeHeight - 1 - mazeStart.y;
             } else
             {
-                exit.x = mazeWidth - 1 - mazeStart.x;
+                exit.x = (int)Random.Range(1f, mazeWidth - 1);
                 exit.y = mazeHeight - 1;
             }
             MakeDoorway(exit);
         }
         if(first == true)
         {
-            BuildMaze(0,0);
+            BuildMaze(0,0, wallPrefab);
  //           mang.MakeNewMaze();
         }
-        else
+        else if(MazeCounter == 2)
         {
-            BuildMaze(0, otherMazeMaker.mazeHeight);
+            BuildMaze(0, otherMazeMaker.mazeHeight, wall1Prefab);
+        } else if(MazeCounter == 3)
+        {
+            BuildMaze(0, otherMazeMaker.mazeHeight, wall2Prefab);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && first == true)
         {
             MakeMaze();
         }
@@ -167,7 +189,7 @@ public class MazeMaker : MonoBehaviour
         }
     }
 
-    void BuildMaze(int width, int height)
+    void BuildMaze(int width, int height, GameObject wallPrefab)
     {
         for (int x = width; x < mazeWidth; x++)
         {

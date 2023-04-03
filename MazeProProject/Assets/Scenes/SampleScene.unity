@@ -157,6 +157,7 @@ MonoBehaviour:
   first: 0
   otherMazeMaker: {fileID: 1121710672}
   mang: {fileID: 470932021}
+  MazeCounter: 2
 --- !u!4 &378009448
 Transform:
   m_ObjectHideFlags: 0
@@ -168,8 +169,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2095833734}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -207,6 +207,7 @@ MonoBehaviour:
   firstMaze: {fileID: 1121710672}
   thirdMazeMaker: {fileID: 1803369841}
   thirdMaze: {fileID: 1803369842}
+  camera: {fileID: 963194225}
 --- !u!4 &470932022
 Transform:
   m_ObjectHideFlags: 0
@@ -393,12 +394,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.53852165, y: -0, z: -0, w: 0.84261173}
-  m_LocalPosition: {x: 0, y: 17.25, z: -7.28}
+  m_LocalPosition: {x: 10, y: 17.25, z: -7.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2095833734}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 65.166, y: 0, z: 0}
 --- !u!1 &1121710670
 GameObject:
@@ -449,6 +450,7 @@ MonoBehaviour:
   first: 1
   otherMazeMaker: {fileID: 378009447}
   mang: {fileID: 470932021}
+  MazeCounter: 0
 --- !u!850595691 &1198452627
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -643,6 +645,7 @@ MonoBehaviour:
   first: 0
   otherMazeMaker: {fileID: 378009447}
   mang: {fileID: 470932021}
+  MazeCounter: 3
 --- !u!4 &1803369843
 Transform:
   m_ObjectHideFlags: 0
@@ -657,36 +660,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2095833733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2095833734}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2095833734
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095833733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 963194228}
-  m_Father: {fileID: 378009448}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
